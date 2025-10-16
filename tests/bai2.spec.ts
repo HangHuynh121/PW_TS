@@ -1,6 +1,11 @@
 import { test, expect } from '@playwright/test';
 
+test('check headless mode', async ({ browserName }) => {
+    console.log('Browser:', browserName);
+});
 
+
+/* 
 test.describe('Trang chu playwright.dev', () => {
     test('TC01. Check menu hien thi DOCS', async ({ page }) => {
         await page.goto('https://playwright.dev/');
@@ -12,10 +17,6 @@ test.describe('Trang chu playwright.dev', () => {
     });
 
 })
-
-
-
-
 
 
 
@@ -36,9 +37,7 @@ test.describe('Trang nhan su anh tester', () => {
         })
     });
 
-})
-
-
+}) */
 
 
 
@@ -85,8 +84,7 @@ test('TC03. Demo networkidle', async ({ page }) => {
 
 
 
-
-
+/* 
 
 //AUTO WAIT: https://demoapp-sable-gamma.vercel.app/
 //Playwright có thể tự động chờ đợi các phần tử trở nên khả dụng trước khi tương tác với chúng. 
@@ -95,7 +93,7 @@ test('TC04. Demo Auto wait', async ({ page }) => {
     console.log('DEMO AUTO WAIT TC04');
     await page.goto('https://playwright.dev/');
 })
-
+ */
 
 
 
