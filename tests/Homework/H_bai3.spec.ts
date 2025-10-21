@@ -8,7 +8,7 @@ test('Homework.Bai2', async ({ page }) => {
 
 
     //Bai1
-    const buttonB = page.getByRole('textbox', { name: 'Bold', pressed: true })
+    const buttonB = page.getByRole('button', { name: 'Bold', pressed: true })
     await expect(buttonB).toBeVisible
 
 
