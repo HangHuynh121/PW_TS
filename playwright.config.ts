@@ -23,8 +23,10 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
+  timeout: 120000,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    actionTimeout: 3000,
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
     headless: false,
@@ -32,22 +34,26 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
+  expect: {
+    timeout: 6000,
+  },
+
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    }
+    },
 
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
-    // },
-
-    // {
-    //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
-    // },
+    /*  {
+       name: 'firefox',
+       use: { ...devices['Desktop Firefox'] },
+     },
+ 
+     {
+       name: 'webkit',
+       use: { ...devices['Desktop Safari'] },
+     }, */
 
     /* Test against mobile viewports. */
     // {
